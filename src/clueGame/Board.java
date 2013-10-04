@@ -5,21 +5,20 @@ import java.util.Map;
 
 public class Board {
 	
-	ArrayList<BoardCell> cells;
-	Map<Character,String> rooms;
+	private ArrayList<BoardCell> cells;
+	private Map<Character,String> rooms;
 	private int numRows;
-	private int NumColumns;
+	private int numColumns;
+	public Board(String sheetName, String fileName){
+		
+	}
 	
 	public void loadConfigFiles(){
 
 	}
 	
-	public void calcIndex(){
-		
-	}
-
-	public void GetRoomCellAt(){
-		
+	public BoardCell calcIndex(int rowNum, int columnNum){
+		return new BoardCell();
 	}
 
 	public ArrayList<BoardCell> getCells() {
@@ -35,7 +34,26 @@ public class Board {
 	}
 
 	public int getNumColumns() {
-		return NumColumns;
+		return numColumns;
+	}
+
+	public RoomCell getRoomCellAt(int i, int j) {
+
+		return null;
+	}
+
+	public BoardCell getCellAt(int i) {
+	
+		return null;
+	}
+
+	public void loadRoomConfig() {
+		
+	}
+
+	public void loadBoardConfig() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
