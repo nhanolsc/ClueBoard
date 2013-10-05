@@ -7,6 +7,7 @@ public class Board {
 	
 	private ArrayList<BoardCell> cells;
 	private Map<Character,String> rooms;
+	private int maxColumns, maxRows;
 	private int numRows;
 	private int numColumns;
 	public Board(String sheetName, String fileName){
@@ -14,11 +15,13 @@ public class Board {
 	}
 	
 	public void loadConfigFiles(){
-
+		loadBoardConfig();
+		loadRoomConfig();
 	}
 	
-	public BoardCell calcIndex(int rowNum, int columnNum){
-		return new BoardCell();
+	public int calcIndex(int rowNum, int columnNum){
+			int index = rowNum* maxColumns + columnNum;	
+		return index;
 	}
 
 	public ArrayList<BoardCell> getCells() {
@@ -37,14 +40,25 @@ public class Board {
 		return numColumns;
 	}
 
-	public RoomCell getRoomCellAt(int i, int j) {
+	public RoomCell getRoomCellAt(int row, int column) {
+		RoomCell room = new RoomCell(row,column);
+		if(room.isRoom() == true){
+			return room;
+		}
+		else
+			return null;
+	}
 
-		return null;
+	public int getMaxColumns() {
+		return maxColumns;
+	}
+
+	public int getMaxRows() {
+		return maxRows;
 	}
 
 	public BoardCell getCellAt(int i) {
-	
-		return null;
+		return cells.get(i);
 	}
 
 	public void loadRoomConfig() {
