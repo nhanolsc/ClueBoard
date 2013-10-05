@@ -1,5 +1,7 @@
 package clueGame;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -18,6 +20,7 @@ public class Board {
 	}
 	
 	public BoardCell calcIndex(int rowNum, int columnNum){
+		int boardindex= rowNum * numRows + columnNum;
 		return new BoardCell();
 	}
 
@@ -51,10 +54,14 @@ public class Board {
 		
 	}
 
-	public void loadBoardConfig() {
+	public void loadBoardConfig() throws BadConfigFormatException{
 		// TODO Auto-generated method stub
-		
+		try{
+		FileReader reader = new FileReader("BoardLayout.csv");
 	}
-	
+		catch(FileNotFoundException e){
+			System.out.println(e.getLocalizedMessage());
+		}
+	}
 	
 }

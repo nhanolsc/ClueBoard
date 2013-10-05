@@ -100,8 +100,8 @@ public class TestingBoards {
 			assertEquals(483, board.calcIndex(NUM_ROWS-1, 0));
 			assertEquals(505, board.calcIndex(NUM_ROWS-1, NUM_COLUMNS-1));
 			// Test a couple others
-			assertEquals(24, board.calcIndex(1, 1));
-			assertEquals(66, board.calcIndex(2, 20));		
+			assertEquals(22, board.calcIndex(1, 1));
+			assertEquals(62, board.calcIndex(2, 20));		
 		}
 		
 		// Test a few room cells to ensure the room initial is
